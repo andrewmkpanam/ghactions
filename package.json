@@ -1,0 +1,22 @@
+{
+  "name": "ghdemo",
+  "version": "1.0.0",
+  "description": "test gh actions ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewmkpanam/ghactions.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrewmkpanam/ghactions/issues"
+  },
+  "homepage": "https://github.com/andrewmkpanam/ghactions#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
