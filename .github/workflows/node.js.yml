@@ -16,7 +16,6 @@ pull_request:
 jobs:
 # Job identifier, can be any name (here it's 'build')
 build:
-    # Specifies the type of virtual host environment (runner) to use
     runs-on: ubuntu-latest
 
     # Strategy for running the jobs - this section is useful for testing across multiple environments
@@ -30,7 +29,6 @@ build:
     - # Checks-out your repository under $GITHUB_WORKSPACE, so the job can access it
     uses: actions/checkout@v2
 
-    - # Sets up the specified version of Node.js
     name: Use Node.js ${{" matrix.node-version "}}
     uses: actions/setup-node@v1
     with:
