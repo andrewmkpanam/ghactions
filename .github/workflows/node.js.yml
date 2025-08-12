@@ -23,7 +23,7 @@ build:
     strategy:
     # A matrix build strategy to test against multiple versions of Node.js
     matrix:
-        node-version: [14.x, 16.x]
+        node-version: [12.x, 14.x, 16.x]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -44,3 +44,17 @@ build:
 
     - # Runs tests as defined in the project's package.json
     run: npm test
+
+    - name: Run Linter
+    run: npx eslint .
+    # 'npx eslint .' runs the ESLint tool on all the files in your repository.
+    # ESLint is a static code analysis tool used to identify problematic patterns in JavaScript code.
+    - name: Cache Node Modules
+    uses: actions/cache@v2
+    with:
+        path: ~/.npm
+        key: ${{" runner.os "}}-node-${{" hashFiles('**/package-lock.json') "}}
+        restore-keys: |
+        ${{" runner.os "}}-node-
+    # This snippet caches the installed node modules based on the hash of the 'package-lock.json' file.
+    # It helps in speeding up the installation process by reusing the cached modules when the 'package-lock.json' file hasn't changed.

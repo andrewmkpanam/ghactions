@@ -1,0 +1,12 @@
+{
+  "env": {
+    "node": true,
+    "es2021": true
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+    // Add any custom rules here
+    "semi": ["error", "always"],
+    "quotes": ["error", "double"]
+  }
+}
